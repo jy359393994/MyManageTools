@@ -2,6 +2,7 @@ package com.lzw.menu;
 
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -23,23 +24,21 @@ public class KcglMenu extends JMenu{
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_K);	
+		mKcpdItem = new JMenuItem("库存盘点");
+		ImageIcon kcpdicon = new ImageIcon("images/kucun_pandian.png");
+		mKcpdItem.setIcon(kcpdicon);
+		mJgtzItem = new JMenuItem("价格调整");
+		ImageIcon jgtzicon = new ImageIcon("images/jiage_tiaozheng.png");
+		mJgtzItem.setIcon(jgtzicon);
 		add(getkcpdItem());
 		add(getjgtzItem());
 	}
 	
 	public JMenuItem getkcpdItem(){
-		
-		if(mKcpdItem == null){
-			mKcpdItem = new JMenuItem("库存盘点");
-		}
 		return mKcpdItem;
 	}
 	
 	public JMenuItem getjgtzItem(){
-		
-		if(mJgtzItem == null){
-			mJgtzItem = new JMenuItem("价格调整");
-		}
 		return mJgtzItem;
 	}
 

@@ -2,6 +2,7 @@ package com.lzw.menu;
 
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -26,6 +27,18 @@ public class CkMenu extends JMenu{
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_W);	
+		mCkcdItem = new JMenuItem("窗口层叠");
+		ImageIcon ckcdicon = new ImageIcon("images/chuangkou_pingpu.png");
+		mCkcdItem.setIcon(ckcdicon);
+		mQbgbItem = new JMenuItem("全部关闭");
+		ImageIcon qbgbicon = new ImageIcon("images/quanbu_guanbi.png");
+		mQbgbItem.setIcon(qbgbicon);
+		mQbzxhItem = new JMenuItem("全部最小化");
+		ImageIcon qbzxhicon = new ImageIcon("images/quanbu_zuixiaohua.png");
+		mQbzxhItem.setIcon(qbzxhicon);
+		mQbhyItem = new JMenuItem("全部还原");
+		ImageIcon qbhyicon = new ImageIcon("images/quanbu_huanyuan.png");
+		mQbhyItem.setIcon(qbhyicon);
 		add(getckcdItem());
 		add(getqbgbItem());
 		add(getqbzxhItem());
@@ -33,33 +46,17 @@ public class CkMenu extends JMenu{
 	}
 	
 	private JMenuItem getckcdItem(){
-		
-		if(mCkcdItem == null){
-			mCkcdItem = new JMenuItem("窗口层叠");
-		}
 		return mCkcdItem;
 	}
 	
 	private JMenuItem getqbgbItem(){
-		
-		if(mQbgbItem == null){
-			mQbgbItem = new JMenuItem("全部关闭");
-		}
 		return mQbgbItem;
 	}
 	
 	private JMenuItem getqbzxhItem(){
-		
-		if(mQbzxhItem == null){
-			mQbzxhItem = new JMenuItem("全部最小化");
-		}
 		return mQbzxhItem;
 	}	
 	private JMenuItem getqbhyItem(){
-		
-		if(mQbhyItem == null){
-			mQbhyItem = new JMenuItem("全部还原");
-		}
 		return mQbhyItem;
 	}	
 	

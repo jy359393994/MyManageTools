@@ -3,6 +3,7 @@ package com.lzw.menu;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -27,25 +28,22 @@ public class JhglMenu extends JMenu{
 	
 	private void init(){
 		setMnemonic(KeyEvent.VK_J);
-		add(getjhdItem());
+		mJhdItem = new JMenuItem("进货单");
+		ImageIcon jhdicon = new ImageIcon("images/jinhuodan.png");
+		mJhdItem.setIcon(jhdicon);
+		mJhdItem.addActionListener(new ItemActionListener("进货单", mDesktopPane));
+		add(mJhdItem);
+		mJhthItem = new JMenuItem("进货退货");
+		ImageIcon jhthicon = new ImageIcon("images/jinhuo_tuihuo.png");
+		mJhthItem.setIcon(jhthicon);
 		add(getjhthItem());
 	}
 	
 	public JMenuItem getjhdItem(){
-		
-		if(mJhdItem == null){
-			mJhdItem = new JMenuItem("进货单");
-			Jinhuodanframe jhdframe = new Jinhuodanframe("进货单");
-			mJhdItem.addActionListener(new ItemActionListener(jhdframe, "进货单", mDesktopPane));
-		}
 		return mJhdItem;
 	}
 	
 	private JMenuItem getjhthItem(){
-		
-		if(mJhthItem == null){
-			mJhthItem = new JMenuItem("进货退货");
-		}
 		return mJhthItem;
 	}
 	

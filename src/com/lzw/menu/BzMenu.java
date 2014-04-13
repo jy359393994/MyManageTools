@@ -2,6 +2,7 @@ package com.lzw.menu;
 
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -24,31 +25,28 @@ public class BzMenu extends JMenu{
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_H);	
+		mGyItem = new JMenuItem("关于");
+		ImageIcon gyicon = new ImageIcon("images/guanyu.png");
+		mGyItem.setIcon(gyicon);
+		mLxjszcItem = new JMenuItem("联系技术支持");
+		ImageIcon lxjszcicon = new ImageIcon("images/jishu_zhichi.png");
+		mLxjszcItem.setIcon(lxjszcicon);		
+		mFwjswzItem = new JMenuItem("访问技术网站");
+		ImageIcon jswzicon = new ImageIcon("images/jishu_wangzhan.png");
+		mFwjswzItem.setIcon(jswzicon);
 		add(getgyItem());
 		add(getlxjszcItem());
 		add(getfwjswzItem());
 	}
 	
 	private JMenuItem getgyItem(){
-		
-		if(mGyItem == null){
-			mGyItem = new JMenuItem("关于");
-		}
 		return mGyItem;
 	}
 	private JMenuItem getlxjszcItem(){
-		
-		if(mLxjszcItem == null){
-			mLxjszcItem = new JMenuItem("联系技术支持");
-		}
 		return mLxjszcItem;
 	}
 	
 	private JMenuItem getfwjswzItem(){
-		
-		if(mFwjswzItem == null){
-			mFwjswzItem = new JMenuItem("访问技术网站");
-		}
 		return mFwjswzItem;
 	}
 	

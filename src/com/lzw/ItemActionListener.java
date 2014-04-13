@@ -11,8 +11,7 @@ public class ItemActionListener implements ActionListener{
 	JInternalFrame miframe;
 	String mtitle;
 	DesktopPane mDesktopPane;
-	public ItemActionListener(JInternalFrame iframe,String title,DesktopPane desktoppane){
-		miframe = iframe;
+	public ItemActionListener(String title,DesktopPane desktoppane){
 		mtitle = title;
 		mDesktopPane = desktoppane;
 	}
@@ -21,7 +20,6 @@ public class ItemActionListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		System.out.println("in the actionPerformed method of ItemActionListener");
-		if(miframe == null || miframe.isClosed()){
 			System.out.println("the miframe is null or closed");
 			JInternalFrame[] allFrames = mDesktopPane.getAllFrames();
 			int titleBarHight = 20*allFrames.length;
@@ -29,16 +27,20 @@ public class ItemActionListener implements ActionListener{
 			int y = x;
 			int width = 300;
 			int height = 200;
-			if(mtitle.equals("进货单")){
-				miframe = new Jinhuodanframe(mtitle);	
-				System.out.println("创建进货单窗体");
+			if(miframe == null){
+				if(mtitle.equals("进货单")){
+					miframe = new Jinhuodanframe(mtitle);	
+					System.out.println("创建进货单窗体");
+				}
+				miframe.setBounds(x, y, width, height);
+				miframe.setVisible(true);
+				mDesktopPane.add(miframe);
 			}
 			System.out.println("title is not 进货单");
-			miframe.setBounds(x, y, width, height);
-			miframe.setVisible(true);
-			mDesktopPane.add(miframe);
+			if(miframe !=null){
+
+			}
 			
-		}
 		System.out.println("title is not null or is not closed");
 	}
 

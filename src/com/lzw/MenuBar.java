@@ -52,12 +52,30 @@ public class MenuBar extends JMenuBar{
 		add(mBzMenu);
 	}
 	
-//	public JMenuBar getMenuBar(){
-//		
-//		if(mJMenuBar == null){
-//			mJMenuBar = new JMenuBar();
-//			mJMenuBar.add(mJhglMenu);
-//		}
-//		return mJMenuBar;
-//	}
+	public JhglMenu getjhglMenu(){
+		return mJhglMenu;
+	}
+	
+	public XsglMenu getxsglMenu(){
+		return mXsglMenu;
+	}
+	public KcglMenu getkcglMenu(){
+		return mKcglMenu;
+	}
+	public XxcxMenu getxxcxMenu(){
+		return mXxcxMenu;
+	}
+	public JbzlMenu getjbzlMenu(){
+		return mJbzlMenu;
+	}
+	public XtwhMenu getxtwhMenu(){
+		return mXtwhMenu;
+	}
+	public CkMenu getckMenu(){
+		return mCkMenu;
+	}
+	public BzMenu getbzMenu(){
+		return mBzMenu;
+	}
+
 }

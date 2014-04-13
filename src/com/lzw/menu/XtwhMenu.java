@@ -2,6 +2,7 @@ package com.lzw.menu;
 
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -24,32 +25,29 @@ public class XtwhMenu extends JMenu{
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_S);	
+		mSjkbfyhfItem = new JMenuItem("数据库备份与恢复");
+		ImageIcon sjbficon = new ImageIcon("images/shujuku_beifen_huifu.png");
+		mSjkbfyhfItem.setIcon(sjbficon);
+		mMmxgItem = new JMenuItem("密码修改");
+		ImageIcon mmxgicon = new ImageIcon("images/mima_xiugai.png");
+		mMmxgItem.setIcon(mmxgicon);
+		mExitItem = new JMenuItem("退出系统");
+		ImageIcon tcxticon = new ImageIcon("images/tuichu_xitong.png");
+		mExitItem.setIcon(tcxticon);
 		add(getsjkbfyhfItem());
 		add(getmmxgItem());
 		add(getexitItem());
 	}
 	
 	private JMenuItem getsjkbfyhfItem(){
-		
-		if(mSjkbfyhfItem == null){
-			mSjkbfyhfItem = new JMenuItem("数据库备份与恢复");
-		}
 		return mSjkbfyhfItem;
 	}
 
 	private JMenuItem getmmxgItem(){
-		
-		if(mMmxgItem == null){
-			mMmxgItem = new JMenuItem("密码修改");
-		}
 		return mMmxgItem;
 	}
 
 	public JMenuItem getexitItem(){
-		
-		if(mExitItem == null){
-			mExitItem = new JMenuItem("退出系统");
-		}
 		return mExitItem;
 	}
 }

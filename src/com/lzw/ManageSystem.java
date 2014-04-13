@@ -28,14 +28,14 @@ public class ManageSystem extends JFrame{
 	
 	public ManageSystem(){
 		setTitle("企业进销存管理系统");
-		mMenuBar = new MenuBar(mDesktopPane, mJLabel);
+		
 		init();
 	}
 	
 	public void init(){
-		setJMenuBar(getMyMenuBar());
 		getDesktopPane();
-		ToolBar toolbar = new ToolBar(mDesktopPane, mJLabel);
+		setJMenuBar(getMyMenuBar());
+		ToolBar toolbar = new ToolBar(mMenuBar, mJLabel);
 		setLayout(new BorderLayout());
 		add(toolbar,BorderLayout.NORTH);
 		add(mDesktopPane,BorderLayout.CENTER);

@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JToolBar;
 
@@ -16,30 +17,24 @@ import com.lzw.menu.XtwhMenu;
 import com.lzw.menu.XxcxMenu;
 
 public class ToolBar extends JToolBar{
-	private DesktopPane mDesktopPane;
+	private MenuBar mMenuBar;
 	private JLabel mJLabel;
-	public ToolBar(DesktopPane desktoppane,JLabel label){
-		mDesktopPane = desktoppane;
+	public ToolBar(MenuBar menubar,JLabel label){
+		mMenuBar = menubar;
 		mJLabel = label;
 		init();
 	}
 	 private void init(){
-		 setFloatable(false);
-		JhglMenu jhglmenu = new JhglMenu(mDesktopPane,mJLabel);
-		add(CreateItemButton(jhglmenu.getjhdItem())); 
-		XsglMenu xsglmenu = new XsglMenu(mDesktopPane, mJLabel);
-		add(CreateItemButton(xsglmenu.getxsdItem())); 
-		KcglMenu kcgl = new KcglMenu(mDesktopPane, mJLabel);
-		add(CreateItemButton(kcgl.getkcpdItem()));
-		add(CreateItemButton(kcgl.getjgtzItem()));
-		XxcxMenu xxcxmenu = new XxcxMenu(mDesktopPane, mJLabel);
-		add(CreateItemButton(xxcxmenu.getspcxItem()));
-		JbzlMenu jbzlmenu = new JbzlMenu(mDesktopPane, mJLabel);
-		add(CreateItemButton(jbzlmenu.getspzlglItem()));
-		add(CreateItemButton(jbzlmenu.getkhzlglItem()));
-		add(CreateItemButton(jbzlmenu.getgyszlglItem()));
-		XtwhMenu xtwhmenu = new XtwhMenu(mDesktopPane, mJLabel);
-		add(CreateItemButton(xtwhmenu.getexitItem()));
+		setFloatable(false);
+		add(CreateItemButton(mMenuBar.getjhglMenu().getjhdItem())); 
+		add(CreateItemButton(mMenuBar.getxsglMenu().getxsdItem())); 
+		add(CreateItemButton(mMenuBar.getkcglMenu().getkcpdItem()));
+		add(CreateItemButton(mMenuBar.getkcglMenu().getjgtzItem()));
+		add(CreateItemButton(mMenuBar.getxxcxMenu().getspcxItem()));
+		add(CreateItemButton(mMenuBar.getjbzlMenu().getspzlglItem()));
+		add(CreateItemButton(mMenuBar.getjbzlMenu().getkhzlglItem()));
+		add(CreateItemButton(mMenuBar.getjbzlMenu().getgyszlglItem()));
+		add(CreateItemButton(mMenuBar.getxtwhMenu().getexitItem()));
 	 }
 	 
 	 
