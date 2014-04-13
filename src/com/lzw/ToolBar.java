@@ -43,7 +43,7 @@ public class ToolBar extends JToolBar{
 	 }
 	 
 	 
-	 private JButton CreateItemButton(JMenuItem item){
+	 private JButton CreateItemButton(final JMenuItem item){
 		 JButton button = new JButton();
 		 button.setText(item.getText());
 		 button.setFocusable(false);
@@ -52,7 +52,7 @@ public class ToolBar extends JToolBar{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				
+				item.doClick();
 			}
 			 
 		 });

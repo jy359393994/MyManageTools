@@ -34,9 +34,11 @@ public class ManageSystem extends JFrame{
 	
 	public void init(){
 		setJMenuBar(getMyMenuBar());
+		getDesktopPane();
 		ToolBar toolbar = new ToolBar(mDesktopPane, mJLabel);
 		setLayout(new BorderLayout());
 		add(toolbar,BorderLayout.NORTH);
+		add(mDesktopPane,BorderLayout.CENTER);
 	}
 	public JDesktopPane getDesktopPane(){
 		

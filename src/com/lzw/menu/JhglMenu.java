@@ -9,6 +9,8 @@ import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
 import com.lzw.DesktopPane;
+import com.lzw.ItemActionListener;
+import com.lzw.iframe.Jinhuodanframe;
 
 public class JhglMenu extends JMenu{
 	
@@ -33,6 +35,8 @@ public class JhglMenu extends JMenu{
 		
 		if(mJhdItem == null){
 			mJhdItem = new JMenuItem("进货单");
+			Jinhuodanframe jhdframe = new Jinhuodanframe("进货单");
+			mJhdItem.addActionListener(new ItemActionListener(jhdframe, "进货单", mDesktopPane));
 		}
 		return mJhdItem;
 	}
@@ -44,5 +48,7 @@ public class JhglMenu extends JMenu{
 		}
 		return mJhthItem;
 	}
+	
+	
 	
 }
