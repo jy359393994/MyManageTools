@@ -16,7 +16,7 @@ import com.lzw.menu.JhglMenu;
 import com.lzw.menu.KcglMenu;
 import com.lzw.menu.XsglMenu;
 import com.lzw.menu.XtwhMenu;
-import com.lzw.menu.XxccMenu;
+import com.lzw.menu.XxcxMenu;
 
 
 public class MenuBar extends JMenuBar{
@@ -26,7 +26,7 @@ public class MenuBar extends JMenuBar{
 	private JhglMenu mJhglMenu;
 	private XsglMenu mXsglMenu;
 	private KcglMenu mKcglMenu;
-	private XxccMenu mXxccMenu;
+	private XxcxMenu mXxcxMenu;
 	private JbzlMenu mJbzlMenu;
 	private XtwhMenu mXtwhMenu;
 	private CkMenu mCkMenu;
@@ -37,7 +37,7 @@ public class MenuBar extends JMenuBar{
 		mJhglMenu = new JhglMenu(mDesktopPane, mLabel);
 		mXsglMenu = new XsglMenu(mDesktopPane, mLabel);
 		mKcglMenu = new KcglMenu(mDesktopPane, mLabel);
-		mXxccMenu = new XxccMenu(mDesktopPane, mLabel);
+		mXxcxMenu = new XxcxMenu(mDesktopPane, mLabel);
 		mJbzlMenu = new JbzlMenu(mDesktopPane, mLabel);
 		mXtwhMenu = new XtwhMenu(mDesktopPane, mLabel);
 		mCkMenu = new CkMenu(mDesktopPane, mLabel);
@@ -46,7 +46,7 @@ public class MenuBar extends JMenuBar{
 		add(mXsglMenu);
 		add(mKcglMenu);
 		add(mXtwhMenu);
-		add(mXxccMenu);
+		add(mXxcxMenu);
 		add(mJbzlMenu);
 		add(mCkMenu);
 		add(mBzMenu);

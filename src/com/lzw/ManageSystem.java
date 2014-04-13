@@ -1,5 +1,7 @@
 package com.lzw;
 
+import java.awt.BorderLayout;
+
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -32,6 +34,9 @@ public class ManageSystem extends JFrame{
 	
 	public void init(){
 		setJMenuBar(getMyMenuBar());
+		ToolBar toolbar = new ToolBar(mDesktopPane, mJLabel);
+		setLayout(new BorderLayout());
+		add(toolbar,BorderLayout.NORTH);
 	}
 	public JDesktopPane getDesktopPane(){
 		

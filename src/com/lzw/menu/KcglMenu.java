@@ -12,7 +12,7 @@ public class KcglMenu extends JMenu{
 	private DesktopPane mDesktopPane;
 	private JLabel mJLabel;
 	private JMenuItem mKcpdItem;
-	private JMenuItem mJgglItem;
+	private JMenuItem mJgtzItem;
 	public KcglMenu(DesktopPane desktoppane,JLabel label){
 		super("库存管理(K)");
 		mDesktopPane = desktoppane;
@@ -24,7 +24,7 @@ public class KcglMenu extends JMenu{
 		
 		setMnemonic(KeyEvent.VK_K);	
 		add(getkcpdItem());
-		add(getjgglItem());
+		add(getjgtzItem());
 	}
 	
 	public JMenuItem getkcpdItem(){
@@ -35,12 +35,12 @@ public class KcglMenu extends JMenu{
 		return mKcpdItem;
 	}
 	
-	public JMenuItem getjgglItem(){
+	public JMenuItem getjgtzItem(){
 		
-		if(mJgglItem == null){
-			mJgglItem = new JMenuItem("价格管理");
+		if(mJgtzItem == null){
+			mJgtzItem = new JMenuItem("价格调整");
 		}
-		return mJgglItem;
+		return mJgtzItem;
 	}
 
 }
