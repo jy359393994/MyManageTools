@@ -9,17 +9,17 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.KeyStroke;
 
-import com.lzw.DesktopPane;
+import com.lzw.MyDesktopPane;
 import com.lzw.ItemActionListener;
 import com.lzw.iframe.Jinhuodanframe;
 
 public class JhglMenu extends JMenu{
 	
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mLabel;
 	private JMenuItem mJhdItem;
 	private JMenuItem mJhthItem;
-	public JhglMenu(DesktopPane desktopPane,JLabel label){
+	public JhglMenu(MyDesktopPane desktopPane,JLabel label){
 		super("进货管理(J)");
 		mDesktopPane = desktopPane;
 		mLabel = label;

@@ -7,14 +7,14 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import com.lzw.DesktopPane;
+import com.lzw.MyDesktopPane;
 
 public class KcglMenu extends JMenu{
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mJLabel;
 	private JMenuItem mKcpdItem;
 	private JMenuItem mJgtzItem;
-	public KcglMenu(DesktopPane desktoppane,JLabel label){
+	public KcglMenu(MyDesktopPane desktoppane,JLabel label){
 		super("库存管理(K)");
 		mDesktopPane = desktoppane;
 		mJLabel = label;

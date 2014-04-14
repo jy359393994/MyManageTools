@@ -7,15 +7,15 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import com.lzw.DesktopPane;
+import com.lzw.MyDesktopPane;
 
 public class BzMenu extends JMenu{
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mJLabel;
 	private JMenuItem mGyItem;
 	private JMenuItem mLxjszcItem;
 	private JMenuItem mFwjswzItem;
-	public BzMenu(DesktopPane desktoppane,JLabel label){
+	public BzMenu(MyDesktopPane desktoppane,JLabel label){
 		super("帮助(H)");
 		mDesktopPane = desktoppane;
 		mJLabel = label;

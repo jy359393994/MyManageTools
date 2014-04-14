@@ -7,16 +7,16 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import com.lzw.DesktopPane;
+import com.lzw.MyDesktopPane;
 
 public class JbzlMenu extends JMenu{
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mJLabel;
 	private JMenuItem mSpzlglItem;
 	private JMenuItem mKhzlglItem;
 	private JMenuItem mGyszlglItem;
 	private JMenuItem mJsrszItem;
-	public JbzlMenu(DesktopPane desktoppane,JLabel label){
+	public JbzlMenu(MyDesktopPane desktoppane,JLabel label){
 		super("基本资料(B)");
 		mDesktopPane = desktoppane;
 		mJLabel = label;

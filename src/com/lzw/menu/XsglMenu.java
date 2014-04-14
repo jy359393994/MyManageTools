@@ -7,16 +7,16 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import com.lzw.DesktopPane;
+import com.lzw.MyDesktopPane;
 
 public class XsglMenu extends JMenu {
 	
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mJLabel;
 	private JMenuItem mXsdItem;
 	private JMenuItem mXsthItem;
 	
-	public XsglMenu(DesktopPane desktoppane,JLabel label){
+	public XsglMenu(MyDesktopPane desktoppane,JLabel label){
 		super("销售管理(X)");
 		mDesktopPane = desktoppane;
 		mJLabel = label;

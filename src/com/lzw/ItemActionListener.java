@@ -10,8 +10,8 @@ import com.lzw.iframe.Jinhuodanframe;
 public class ItemActionListener implements ActionListener{
 	JInternalFrame miframe;
 	String mtitle;
-	DesktopPane mDesktopPane;
-	public ItemActionListener(String title,DesktopPane desktoppane){
+	MyDesktopPane mDesktopPane;
+	public ItemActionListener(String title,MyDesktopPane desktoppane){
 		mtitle = title;
 		mDesktopPane = desktoppane;
 	}
@@ -27,7 +27,7 @@ public class ItemActionListener implements ActionListener{
 			int y = x;
 			int width = 300;
 			int height = 200;
-			if(miframe == null){
+			if(miframe == null || miframe.isClosed()){
 				if(mtitle.equals("进货单")){
 					miframe = new Jinhuodanframe(mtitle);	
 					System.out.println("创建进货单窗体");

@@ -7,16 +7,16 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import com.lzw.DesktopPane;
+import com.lzw.MyDesktopPane;
 
 public class XxcxMenu extends JMenu{
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mJLabel;
 	private JMenuItem mXscxItem;
 	private JMenuItem mSpcxItem;
 	private JMenuItem mXsphItem;
 	
-	public XxcxMenu(DesktopPane desktoppane,JLabel label){
+	public XxcxMenu(MyDesktopPane desktoppane,JLabel label){
 		super("信息查询(C)");
 		mDesktopPane = desktoppane;
 		mJLabel = label;

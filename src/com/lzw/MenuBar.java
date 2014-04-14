@@ -21,7 +21,7 @@ import com.lzw.menu.XxcxMenu;
 
 public class MenuBar extends JMenuBar{
 	
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mLabel;
 	private JhglMenu mJhglMenu;
 	private XsglMenu mXsglMenu;
@@ -31,7 +31,7 @@ public class MenuBar extends JMenuBar{
 	private XtwhMenu mXtwhMenu;
 	private CkMenu mCkMenu;
 	private BzMenu mBzMenu;
-	public MenuBar(DesktopPane desktopPane,JLabel label){
+	public MenuBar(MyDesktopPane desktopPane,JLabel label){
 		mDesktopPane = desktopPane;
 		mLabel = label;
 		mJhglMenu = new JhglMenu(mDesktopPane, mLabel);

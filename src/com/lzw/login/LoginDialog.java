@@ -14,6 +14,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import com.lzw.ManageSystem;
+import com.lzw.Tools;
 import com.lzw.dao.Dao;
 
 public class LoginDialog extends JFrame{
@@ -25,6 +26,7 @@ public class LoginDialog extends JFrame{
 	private JButton mExitButton;
 	private ManageSystem mManageSystem;
 	public LoginDialog(){
+		setResizable(false);
 		LoginPanel panel =new LoginPanel();
 		panel.setLayout(null);
 		getContentPane().add(panel);
@@ -41,7 +43,7 @@ public class LoginDialog extends JFrame{
 		
 		if(mUserLabel == null){
 			mUserLabel = new JLabel("用户名:");
-			mUserLabel.setBounds(55,20,50,22);
+			mUserLabel.setBounds(90,25,50,22);
 		}
 		return mUserLabel;
 	}
@@ -49,7 +51,7 @@ public class LoginDialog extends JFrame{
 	private JLabel getPasswordLabel(){
 		if(mPasswordLabel == null){
 			mPasswordLabel = new JLabel("密码:");
-			mPasswordLabel.setBounds(55,69,50,22);
+			mPasswordLabel.setBounds(90,74,50,22);
 		}
 		return mPasswordLabel;
 	}
@@ -57,7 +59,7 @@ public class LoginDialog extends JFrame{
 	private JTextField getUserField(){
 		if(mUserfield == null){
 			mUserfield = new JTextField();
-			mUserfield.setBounds(new Rectangle(105, 20, 105, 22));
+			mUserfield.setBounds(new Rectangle(145, 25, 105, 22));
 			
 		}
 		return mUserfield;
@@ -67,7 +69,7 @@ public class LoginDialog extends JFrame{
 		if(mPasswordField == null){
 			mPasswordField = new JPasswordField();
 			mPasswordField.setEchoChar('*');
-			mPasswordField.setBounds(new Rectangle(105, 69, 105, 22));
+			mPasswordField.setBounds(new Rectangle(145, 74, 105, 22));
 			mPasswordField.addKeyListener(new KeyListener() {
 				
 				@Override
@@ -97,7 +99,7 @@ public class LoginDialog extends JFrame{
 	private JButton getLoginButton(){
 		if(mLoginButton == null){
 			mLoginButton = new JButton("登录");
-			mLoginButton.setBounds(new Rectangle(60, 114, 60, 20));
+			mLoginButton.setBounds(new Rectangle(100, 119, 60, 20));
 			mLoginButton.addActionListener(new ActionListener() {
 				
 				@Override
@@ -113,7 +115,7 @@ public class LoginDialog extends JFrame{
 						mManageSystem = new ManageSystem();
 						mManageSystem.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 						mManageSystem.setVisible(true);
-						mManageSystem.setBounds(100, 100, 500, 400);
+						mManageSystem.setBounds((Tools.getWidth()-Tools.getWidth()*2/3)/2, (Tools.getHeight()-Tools.getHeight()*3/4)/2, Tools.getWidth()*2/3, Tools.getHeight()*3/4);
 						LoginDialog.this.setVisible(false);
 					}
 					
@@ -126,7 +128,7 @@ public class LoginDialog extends JFrame{
 	private JButton getExitButton(){
 		if(mExitButton == null){
 			mExitButton = new JButton("退出");
-			mExitButton.setBounds(new Rectangle(140, 114, 60, 20));
+			mExitButton.setBounds(new Rectangle(180, 119, 60, 20));
 			mExitButton.addActionListener(new ActionListener() {
 				
 				@Override

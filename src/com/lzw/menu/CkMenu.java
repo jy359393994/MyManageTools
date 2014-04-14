@@ -7,17 +7,17 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import com.lzw.DesktopPane;
+import com.lzw.MyDesktopPane;
 
 public class CkMenu extends JMenu{
 
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mJLabel;
 	private JMenuItem mCkcdItem;
 	private JMenuItem mQbgbItem;
 	private JMenuItem mQbzxhItem;
 	private JMenuItem mQbhyItem;
-	public CkMenu(DesktopPane desktoppane,JLabel label){
+	public CkMenu(MyDesktopPane desktoppane,JLabel label){
 		super("窗口(W)");
 		mDesktopPane = desktoppane;
 		mJLabel = label;

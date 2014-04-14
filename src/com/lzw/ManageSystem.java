@@ -6,13 +6,15 @@ import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 import com.lzw.login.LoginDialog;
 
 public class ManageSystem extends JFrame{
 
 	private MenuBar mMenuBar;
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mJLabel;
 	/**
 	 * @param args
@@ -23,7 +25,15 @@ public class ManageSystem extends JFrame{
 		mlogindialog.setTitle("系统登录");
 		mlogindialog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mlogindialog.setVisible(true);
-		mlogindialog.setBounds(300, 300, 300, 180);
+		mlogindialog.setBounds((Tools.getWidth()-300)/2, (Tools.getHeight()-300)/2, 300, 180);
+		
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException | InstantiationException
+				| IllegalAccessException | UnsupportedLookAndFeelException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public ManageSystem(){
@@ -43,7 +53,7 @@ public class ManageSystem extends JFrame{
 	public JDesktopPane getDesktopPane(){
 		
 		if(mDesktopPane == null){
-			mDesktopPane = new DesktopPane();
+			mDesktopPane = new MyDesktopPane();
 		}
 		return mDesktopPane;
 	}

@@ -7,15 +7,15 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
-import com.lzw.DesktopPane;
+import com.lzw.MyDesktopPane;
 
 public class XtwhMenu extends JMenu{
-	private DesktopPane mDesktopPane;
+	private MyDesktopPane mDesktopPane;
 	private JLabel mJLabel;
 	private JMenuItem mSjkbfyhfItem;
 	private JMenuItem mMmxgItem;
 	private JMenuItem mExitItem;
-	public XtwhMenu(DesktopPane desktoppane,JLabel label){
+	public XtwhMenu(MyDesktopPane desktoppane,JLabel label){
 		super("系统维护(S)");
 		mDesktopPane = desktoppane;
 		mJLabel = label;
