@@ -3,6 +3,7 @@ package com.lzw;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
@@ -41,6 +42,7 @@ public class ToolBar extends JToolBar{
 	 private JButton CreateItemButton(final JMenuItem item){
 		 JButton button = new JButton();
 		 button.setText(item.getText());
+		 button.setIcon(item.getIcon());
 		 button.setFocusable(false);
 		 button.addActionListener(new ActionListener(){
 

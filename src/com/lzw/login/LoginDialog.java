@@ -25,13 +25,15 @@ public class LoginDialog extends JFrame{
 	private JButton mExitButton;
 	private ManageSystem mManageSystem;
 	public LoginDialog(){
-		setLayout(null);
-		getContentPane().add(getUserLabel());
-		getContentPane().add(getUserField());
-		getContentPane().add(getPasswordLabel());
-		getContentPane().add(getPasswordField());
-		getContentPane().add(getLoginButton());
-		getContentPane().add(getExitButton());
+		LoginPanel panel =new LoginPanel();
+		panel.setLayout(null);
+		getContentPane().add(panel);
+		panel.add(getUserLabel());
+		panel.add(getUserField());
+		panel.add(getPasswordLabel());
+		panel.add(getPasswordField());
+		panel.add(getLoginButton());
+		panel.add(getExitButton());
 		
 	}
 	

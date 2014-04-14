@@ -23,7 +23,7 @@ public class ManageSystem extends JFrame{
 		mlogindialog.setTitle("系统登录");
 		mlogindialog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mlogindialog.setVisible(true);
-		mlogindialog.setBounds(300, 300, 285, 200);
+		mlogindialog.setBounds(300, 300, 300, 180);
 	}
 	
 	public ManageSystem(){
