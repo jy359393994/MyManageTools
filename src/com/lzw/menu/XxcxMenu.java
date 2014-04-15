@@ -8,17 +8,18 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import com.lzw.MyDesktopPane;
+import com.lzw.MyMenuItemObserver;
 
 public class XxcxMenu extends JMenu{
-	private MyDesktopPane mDesktopPane;
+	private MyMenuItemObserver mMebuItemObserver;
 	private JLabel mJLabel;
 	private JMenuItem mXscxItem;
 	private JMenuItem mSpcxItem;
 	private JMenuItem mXsphItem;
 	
-	public XxcxMenu(MyDesktopPane desktoppane,JLabel label){
+	public XxcxMenu(MyMenuItemObserver itemobserver,JLabel label){
 		super("信息查询(C)");
-		mDesktopPane = desktoppane;
+		mMebuItemObserver = itemobserver;
 		mJLabel = label;
 		init();
 	}
@@ -26,7 +27,10 @@ public class XxcxMenu extends JMenu{
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_C);	
-		mXscxItem = new JMenuItem("销售查询");
+		mXscxItem = new MyJMenuItem("销售查询", "images/xiaoshou_chaxun.png", mMebuItemObserver);
+		mSpcxItem = new MyJMenuItem("商品查询", "images/shangpin_chaxun.png", mMebuItemObserver);
+		mXsphItem = new MyJMenuItem("销售排行", "images/xiaoshou_paihang.png", mMebuItemObserver);
+/*		mXscxItem = new JMenuItem("销售查询");
 		ImageIcon xscxicon = new ImageIcon("images/xiaoshou_chaxun.png");
 		mXscxItem.setIcon(xscxicon);
 		mSpcxItem = new JMenuItem("商品查询");
@@ -34,7 +38,7 @@ public class XxcxMenu extends JMenu{
 		mSpcxItem.setIcon(spcxicon);
 		mXsphItem = new JMenuItem("销售排行");
 		ImageIcon xsphicon = new ImageIcon("images/xiaoshou_paihang.png");
-		mXsphItem.setIcon(xsphicon);
+		mXsphItem.setIcon(xsphicon);*/
 		add(getxscxItem());
 		add(getspcxItem());
 		add(getxsphItem());

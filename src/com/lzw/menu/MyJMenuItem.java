@@ -18,7 +18,7 @@ public class MyJMenuItem extends JMenuItem{
 		mTitle = title;
 		mIconPath = iconPath;
 		mObserver = observer;
-		
+		setText(title);
 		ImageIcon icon = new ImageIcon(mIconPath);
 		setIcon(icon);
 		addActionListener(new ItemActionListener());

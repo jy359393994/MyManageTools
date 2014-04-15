@@ -8,17 +8,18 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import com.lzw.MyDesktopPane;
+import com.lzw.MyMenuItemObserver;
 
 public class JbzlMenu extends JMenu{
-	private MyDesktopPane mDesktopPane;
+	private MyMenuItemObserver mMebuItemObserver;
 	private JLabel mJLabel;
 	private JMenuItem mSpzlglItem;
 	private JMenuItem mKhzlglItem;
 	private JMenuItem mGyszlglItem;
 	private JMenuItem mJsrszItem;
-	public JbzlMenu(MyDesktopPane desktoppane,JLabel label){
+	public JbzlMenu(MyMenuItemObserver itemobserver,JLabel label){
 		super("基本资料(B)");
-		mDesktopPane = desktoppane;
+		mMebuItemObserver = itemobserver;
 		mJLabel = label;
 		init();
 	}
@@ -26,7 +27,11 @@ public class JbzlMenu extends JMenu{
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_B);
-		mSpzlglItem = new JMenuItem("商品资料管理");
+		mSpzlglItem = new MyJMenuItem("商品资料管理", "images/shangpin_guanli.png", mMebuItemObserver);
+		mKhzlglItem = new MyJMenuItem("客户资料管理", "images/kehu_guanli.png", mMebuItemObserver);
+		mGyszlglItem = new MyJMenuItem("供应商资料管理", "images/gys_guanli.png", mMebuItemObserver);
+		mJsrszItem = new MyJMenuItem("经手人设置", "images/jsr_shezhi.png", mMebuItemObserver);
+/*		mSpzlglItem = new JMenuItem("商品资料管理");
 		ImageIcon spzlicon = new ImageIcon("images/shangpin_guanli.png");
 		mSpzlglItem.setIcon(spzlicon);
 		mKhzlglItem = new JMenuItem("客户资料管理");
@@ -37,7 +42,7 @@ public class JbzlMenu extends JMenu{
 		mGyszlglItem.setIcon(gysizlcon);
 		mJsrszItem = new JMenuItem("经手人设置");
 		ImageIcon jsricon = new ImageIcon("images/jsr_shezhi.png");
-		mJsrszItem.setIcon(jsricon);
+		mJsrszItem.setIcon(jsricon);*/
 		add(getspzlglItem());
 		add(getkhzlglItem());
 		add(getgyszlglItem());

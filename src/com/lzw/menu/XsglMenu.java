@@ -8,17 +8,18 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import com.lzw.MyDesktopPane;
+import com.lzw.MyMenuItemObserver;
 
 public class XsglMenu extends JMenu {
 	
-	private MyDesktopPane mDesktopPane;
+	private MyMenuItemObserver mMebuItemObserver;
 	private JLabel mJLabel;
 	private JMenuItem mXsdItem;
 	private JMenuItem mXsthItem;
 	
-	public XsglMenu(MyDesktopPane desktoppane,JLabel label){
+	public XsglMenu(MyMenuItemObserver itemobserver,JLabel label){
 		super("销售管理(X)");
-		mDesktopPane = desktoppane;
+		mMebuItemObserver = itemobserver;
 		mJLabel = label;
 		init();
 	}
@@ -26,12 +27,14 @@ public class XsglMenu extends JMenu {
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_X);	
-		mXsdItem = new JMenuItem("销售单");
+		mXsdItem = new MyJMenuItem("销售单", "images/xiaoshoudan.png", mMebuItemObserver);
+		mXsthItem = new MyJMenuItem("销售退货", "images/xiaoshou_tuihuo.png", mMebuItemObserver);
+/*		mXsdItem = new JMenuItem("销售单");
 		ImageIcon xsdicon = new ImageIcon("images/xiaoshoudan.png");
 		mXsdItem.setIcon(xsdicon);
 		mXsthItem = new JMenuItem("销售退货");
 		ImageIcon xsthicon = new ImageIcon("images/xiaoshou_tuihuo.png");
-		mXsthItem.setIcon(xsthicon);
+		mXsthItem.setIcon(xsthicon);*/
 		add(getxsdItem());
 		add(getxsthItem());
 	}

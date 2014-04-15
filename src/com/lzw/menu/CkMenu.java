@@ -8,18 +8,19 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import com.lzw.MyDesktopPane;
+import com.lzw.MyMenuItemObserver;
 
 public class CkMenu extends JMenu{
 
-	private MyDesktopPane mDesktopPane;
+	private MyMenuItemObserver mMebuItemObserver;
 	private JLabel mJLabel;
 	private JMenuItem mCkcdItem;
 	private JMenuItem mQbgbItem;
 	private JMenuItem mQbzxhItem;
 	private JMenuItem mQbhyItem;
-	public CkMenu(MyDesktopPane desktoppane,JLabel label){
+	public CkMenu(MyMenuItemObserver itemobserver,JLabel label){
 		super("窗口(W)");
-		mDesktopPane = desktoppane;
+		mMebuItemObserver = itemobserver;
 		mJLabel = label;
 		init();
 	}
@@ -27,7 +28,11 @@ public class CkMenu extends JMenu{
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_W);	
-		mCkcdItem = new JMenuItem("窗口层叠");
+		mCkcdItem = new MyJMenuItem("窗口层叠", "images/chuangkou_pingpu.png", mMebuItemObserver);
+		mQbgbItem = new MyJMenuItem("全部关闭", "images/quanbu_guanbi.png", mMebuItemObserver);
+		mQbzxhItem = new MyJMenuItem("全部最小化", "images/quanbu_zuixiaohua.png", mMebuItemObserver);
+		mQbhyItem = new MyJMenuItem("全部还原", "images/quanbu_huanyuan.png", mMebuItemObserver);
+/*		mCkcdItem = new JMenuItem("窗口层叠");
 		ImageIcon ckcdicon = new ImageIcon("images/chuangkou_pingpu.png");
 		mCkcdItem.setIcon(ckcdicon);
 		mQbgbItem = new JMenuItem("全部关闭");
@@ -38,7 +43,7 @@ public class CkMenu extends JMenu{
 		mQbzxhItem.setIcon(qbzxhicon);
 		mQbhyItem = new JMenuItem("全部还原");
 		ImageIcon qbhyicon = new ImageIcon("images/quanbu_huanyuan.png");
-		mQbhyItem.setIcon(qbhyicon);
+		mQbhyItem.setIcon(qbhyicon);*/
 		add(getckcdItem());
 		add(getqbgbItem());
 		add(getqbzxhItem());

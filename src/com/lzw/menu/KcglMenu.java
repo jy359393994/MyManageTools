@@ -8,15 +8,16 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import com.lzw.MyDesktopPane;
+import com.lzw.MyMenuItemObserver;
 
 public class KcglMenu extends JMenu{
-	private MyDesktopPane mDesktopPane;
+	private MyMenuItemObserver mMebuItemObserver;
 	private JLabel mJLabel;
 	private JMenuItem mKcpdItem;
 	private JMenuItem mJgtzItem;
-	public KcglMenu(MyDesktopPane desktoppane,JLabel label){
+	public KcglMenu(MyMenuItemObserver itemobserver,JLabel label){
 		super("库存管理(K)");
-		mDesktopPane = desktoppane;
+		mMebuItemObserver = itemobserver;
 		mJLabel = label;
 		init();
 	}
@@ -24,12 +25,14 @@ public class KcglMenu extends JMenu{
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_K);	
-		mKcpdItem = new JMenuItem("库存盘点");
+		mKcpdItem = new MyJMenuItem("库存盘点", "images/kucun_pandian.png", mMebuItemObserver);
+		mJgtzItem = new MyJMenuItem("价格调整", "images/jiage_tiaozheng.png", mMebuItemObserver);
+/*		mKcpdItem = new JMenuItem("库存盘点");
 		ImageIcon kcpdicon = new ImageIcon("images/kucun_pandian.png");
 		mKcpdItem.setIcon(kcpdicon);
 		mJgtzItem = new JMenuItem("价格调整");
 		ImageIcon jgtzicon = new ImageIcon("images/jiage_tiaozheng.png");
-		mJgtzItem.setIcon(jgtzicon);
+		mJgtzItem.setIcon(jgtzicon);*/
 		add(getkcpdItem());
 		add(getjgtzItem());
 	}

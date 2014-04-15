@@ -11,31 +11,34 @@ import javax.swing.KeyStroke;
 
 import com.lzw.MyDesktopPane;
 import com.lzw.ItemActionListener;
+import com.lzw.MyMenuItemObserver;
 import com.lzw.iframe.Jinhuodanframe;
 
 public class JhglMenu extends JMenu{
 	
-	private MyDesktopPane mDesktopPane;
+	private MyMenuItemObserver mMebuItemObserver;
 	private JLabel mLabel;
 	private JMenuItem mJhdItem;
 	private JMenuItem mJhthItem;
-	public JhglMenu(MyDesktopPane desktopPane,JLabel label){
+	public JhglMenu(MyMenuItemObserver itemobserver,JLabel label){
 		super("进货管理(J)");
-		mDesktopPane = desktopPane;
+		mMebuItemObserver = itemobserver;
 		mLabel = label;
 		init();
 	}
 	
 	private void init(){
 		setMnemonic(KeyEvent.VK_J);
-		mJhdItem = new JMenuItem("进货单");
+		mJhdItem = new MyJMenuItem("进货单", "images/jinhuodan.png", mMebuItemObserver);
+		mJhthItem = new MyJMenuItem("进货退货", "images/jinhuo_tuihuo.png", mMebuItemObserver);
+/*		mJhdItem = new JMenuItem("进货单");
 		ImageIcon jhdicon = new ImageIcon("images/jinhuodan.png");
 		mJhdItem.setIcon(jhdicon);
-		mJhdItem.addActionListener(new ItemActionListener("进货单", mDesktopPane));
-		add(mJhdItem);
-		mJhthItem = new JMenuItem("进货退货");
+		mJhdItem.addActionListener(new ItemActionListener("进货单", mDesktopPane));*/
+		add(getjhdItem());
+/*		mJhthItem = new JMenuItem("进货退货");
 		ImageIcon jhthicon = new ImageIcon("images/jinhuo_tuihuo.png");
-		mJhthItem.setIcon(jhthicon);
+		mJhthItem.setIcon(jhthicon);*/
 		add(getjhthItem());
 	}
 	

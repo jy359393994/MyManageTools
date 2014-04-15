@@ -21,7 +21,7 @@ import com.lzw.menu.XxcxMenu;
 
 public class MenuBar extends JMenuBar{
 	
-	private MyDesktopPane mDesktopPane;
+	private MyMenuItemObserver mMebuItemObserver;
 	private JLabel mLabel;
 	private JhglMenu mJhglMenu;
 	private XsglMenu mXsglMenu;
@@ -31,23 +31,23 @@ public class MenuBar extends JMenuBar{
 	private XtwhMenu mXtwhMenu;
 	private CkMenu mCkMenu;
 	private BzMenu mBzMenu;
-	public MenuBar(MyDesktopPane desktopPane,JLabel label){
-		mDesktopPane = desktopPane;
+	public MenuBar(MyMenuItemObserver itemobserver,JLabel label){
+		mMebuItemObserver = itemobserver;
 		mLabel = label;
-		mJhglMenu = new JhglMenu(mDesktopPane, mLabel);
-		mXsglMenu = new XsglMenu(mDesktopPane, mLabel);
-		mKcglMenu = new KcglMenu(mDesktopPane, mLabel);
-		mXxcxMenu = new XxcxMenu(mDesktopPane, mLabel);
-		mJbzlMenu = new JbzlMenu(mDesktopPane, mLabel);
-		mXtwhMenu = new XtwhMenu(mDesktopPane, mLabel);
-		mCkMenu = new CkMenu(mDesktopPane, mLabel);
-		mBzMenu = new BzMenu(mDesktopPane, mLabel);
+		mJhglMenu = new JhglMenu(mMebuItemObserver, mLabel);
+		mXsglMenu = new XsglMenu(mMebuItemObserver, mLabel);
+		mKcglMenu = new KcglMenu(mMebuItemObserver, mLabel);
+		mXxcxMenu = new XxcxMenu(mMebuItemObserver, mLabel);
+		mJbzlMenu = new JbzlMenu(mMebuItemObserver, mLabel);
+		mXtwhMenu = new XtwhMenu(mMebuItemObserver, mLabel);
+		mCkMenu = new CkMenu(mMebuItemObserver, mLabel);
+		mBzMenu = new BzMenu(mMebuItemObserver, mLabel);
 		add(mJhglMenu);
 		add(mXsglMenu);
 		add(mKcglMenu);
-		add(mXtwhMenu);
 		add(mXxcxMenu);
 		add(mJbzlMenu);
+		add(mXtwhMenu);
 		add(mCkMenu);
 		add(mBzMenu);
 	}

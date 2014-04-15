@@ -8,16 +8,17 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
 import com.lzw.MyDesktopPane;
+import com.lzw.MyMenuItemObserver;
 
 public class BzMenu extends JMenu{
-	private MyDesktopPane mDesktopPane;
+	private MyMenuItemObserver mMebuItemObserver;
 	private JLabel mJLabel;
 	private JMenuItem mGyItem;
 	private JMenuItem mLxjszcItem;
 	private JMenuItem mFwjswzItem;
-	public BzMenu(MyDesktopPane desktoppane,JLabel label){
+	public BzMenu(MyMenuItemObserver itemobserver,JLabel label){
 		super("帮助(H)");
-		mDesktopPane = desktoppane;
+		mMebuItemObserver = itemobserver;
 		mJLabel = label;
 		init();
 	}
@@ -25,15 +26,18 @@ public class BzMenu extends JMenu{
 	private void init(){
 		
 		setMnemonic(KeyEvent.VK_H);	
-		mGyItem = new JMenuItem("关于");
+		mGyItem = new MyJMenuItem("关于", "images/guanyu.png", mMebuItemObserver);
+		mLxjszcItem = new MyJMenuItem("联系技术支持", "images/jishu_zhichi.png", mMebuItemObserver);
+		mFwjswzItem = new MyJMenuItem("访问技术网站", "images/jishu_wangzhan.png", mMebuItemObserver);
+/*		mGyItem = new JMenuItem("关于");
 		ImageIcon gyicon = new ImageIcon("images/guanyu.png");
-		mGyItem.setIcon(gyicon);
-		mLxjszcItem = new JMenuItem("联系技术支持");
+		mGyItem.setIcon(gyicon);*/
+/*		mLxjszcItem = new JMenuItem("联系技术支持");
 		ImageIcon lxjszcicon = new ImageIcon("images/jishu_zhichi.png");
 		mLxjszcItem.setIcon(lxjszcicon);		
 		mFwjswzItem = new JMenuItem("访问技术网站");
 		ImageIcon jswzicon = new ImageIcon("images/jishu_wangzhan.png");
-		mFwjswzItem.setIcon(jswzicon);
+		mFwjswzItem.setIcon(jswzicon);*/
 		add(getgyItem());
 		add(getlxjszcItem());
 		add(getfwjswzItem());

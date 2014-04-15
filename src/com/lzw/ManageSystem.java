@@ -6,8 +6,6 @@ import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenuBar;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 import com.lzw.login.LoginDialog;
 
@@ -16,6 +14,7 @@ public class ManageSystem extends JFrame{
 	private MenuBar mMenuBar;
 	private MyDesktopPane mDesktopPane;
 	private JLabel mJLabel;
+	private MyMenuItemObserver itemobserver;
 	/**
 	 * @param args
 	 */
@@ -26,14 +25,6 @@ public class ManageSystem extends JFrame{
 		mlogindialog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		mlogindialog.setVisible(true);
 		mlogindialog.setBounds((Tools.getWidth()-300)/2, (Tools.getHeight()-300)/2, 300, 180);
-		
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (ClassNotFoundException | InstantiationException
-				| IllegalAccessException | UnsupportedLookAndFeelException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 	
 	public ManageSystem(){
@@ -44,6 +35,7 @@ public class ManageSystem extends JFrame{
 	
 	public void init(){
 		getDesktopPane();
+		itemobserver = new MyMenuItemObserver(mDesktopPane);
 		setJMenuBar(getMyMenuBar());
 		ToolBar toolbar = new ToolBar(mMenuBar, mJLabel);
 		setLayout(new BorderLayout());
@@ -60,7 +52,7 @@ public class ManageSystem extends JFrame{
 	
 	public JMenuBar getMyMenuBar(){
 		if(mMenuBar == null){
-			mMenuBar = new MenuBar(mDesktopPane, mJLabel);			
+			mMenuBar = new MenuBar(itemobserver, mJLabel);			
 		}
 		return mMenuBar;
 	}
