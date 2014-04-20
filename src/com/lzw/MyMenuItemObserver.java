@@ -127,8 +127,8 @@ public class MyMenuItemObserver implements MenuItemObserver{
 		for(JInternalFrame frame:allFrames){
 			if(title.equals(frame.getTitle())){
 				result = true;
-				frame.dispose();
-				miframe = null;
+//				frame.dispose();
+//				miframe = null;
 //				mDesktopPane.setSelectedFrame(frame);
 				break;
 			}
