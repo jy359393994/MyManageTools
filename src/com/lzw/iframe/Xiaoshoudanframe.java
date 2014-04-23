@@ -15,6 +15,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 
 
@@ -38,6 +40,8 @@ public class Xiaoshoudanframe extends MyJInternalFrame{
 	private JButton tianjia = null;
 	private JButton xiaoshou = null;
 	private Date date;
+	private JTable mJTable = null;
+	JScrollPane mJScrollPane = null;
 	
 	public Xiaoshoudanframe(String title){
 		super(title);
@@ -81,7 +85,7 @@ public class Xiaoshoudanframe extends MyJInternalFrame{
 		setComponent(shijian, 3, 1, 1, 0, true);
 		setComponent(new JLabel("经手人"), 4, 1, 1, 0, false);
 		setComponent(getJsrComboBox(), 5, 1, 1, 0, true);
-		
+		initTable();
 	}
 	
 	private void setComponent(JComponent component,int gridx,int gridy,int gridwidth,int ipadx,boolean fill){
@@ -91,6 +95,9 @@ public class Xiaoshoudanframe extends MyJInternalFrame{
 		gridBagConstraints.gridy = gridy;
 		if(gridwidth > 1){
 			gridBagConstraints.gridwidth = gridwidth;
+		}
+		if(mJTable.equals(component)){
+			gridBagConstraints.gridheight = 300;
 		}
 		if(ipadx > 0){
 			gridBagConstraints.ipadx = ipadx;
@@ -123,6 +130,16 @@ public class Xiaoshoudanframe extends MyJInternalFrame{
 	
 	private void initTable(){
 		String[] columnNames = {"商品名称","商品编号","供应商","产地","单位","规格","单价","数量"};
-		
+		Object[][] data = {
+				{"黄瓜","0001","小红","四川","小红农场","斤","4.0","600"},
+				{"花生","0002","小王","江西","小王农场","斤","6.0","400"},
+				{"瓜子","0003","小欣","浙江","小欣炒货","斤","7.0","500"}
+				
+		};
+		mJTable = new JTable(data,columnNames);
+		mJScrollPane = new JScrollPane(mJTable);
+		mJTable.setFillsViewportHeight(true);
+		setComponent(mJScrollPane, 0, 2, 300, 1, true);
 	}
+	
 }
