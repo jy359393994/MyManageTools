@@ -8,6 +8,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
+import java.util.List;
 
 
 import javax.swing.JButton;
@@ -17,7 +18,9 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 
+import com.lzw.Item;
 import com.lzw.MyJInternalFrame;
+import com.lzw.dao.Dao;
 
 public class Xiaoshoudanframe extends MyJInternalFrame{
 
@@ -77,9 +80,7 @@ public class Xiaoshoudanframe extends MyJInternalFrame{
 		shijian.setText(date.toLocaleString());		
 		setComponent(shijian, 3, 1, 1, 0, true);
 		setComponent(new JLabel("经手人"), 4, 1, 1, 0, false);
-		jsr.setFocusable(false);
-		jsr.setPreferredSize(new Dimension(80, 21));
-		setComponent(jsr, 5, 1, 1, 0, true);
+		setComponent(getJsrComboBox(), 5, 1, 1, 0, true);
 		
 	}
 	
@@ -99,6 +100,29 @@ public class Xiaoshoudanframe extends MyJInternalFrame{
 			gridBagConstraints.fill = gridBagConstraints.HORIZONTAL;
 		}
 		getContentPane().add(component,gridBagConstraints);
+		
+	}
+	
+	private JComboBox getJsrComboBox(){
+		if(jsr == null){
+			jsr = new JComboBox();
+			List<String> czyList = Dao.getJsr();
+			int i = 0;
+			for(String str:czyList){
+				String id = String.valueOf(i);
+				String name = str;
+				Item item = new Item(id,name);
+				item.setId(id + "");
+				item.setName(name);
+				jsr.addItem(item);
+				i++;
+			}
+		}
+		return jsr;
+	}
+	
+	private void initTable(){
+		String[] columnNames = {"商品名称","商品编号","供应商","产地","单位","规格","单价","数量"};
 		
 	}
 }

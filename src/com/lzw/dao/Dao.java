@@ -1,5 +1,8 @@
 package com.lzw.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Dao {
 	private static final String  USER = "gcl"; 
 	private static final String  PASSWORD = "fgc"; 
@@ -12,5 +15,13 @@ public class Dao {
 		}
 		return result;*/
 		return true;
+	}
+	
+	public static List getJsr(){
+		List<String> list = new ArrayList<String>();
+		list.add("张三");
+		list.add("李四");
+		list.add("小明");
+		return list;
 	}
 }
